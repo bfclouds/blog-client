@@ -2,10 +2,9 @@
     <div id="header">
         <div class="header-logo"></div>
         <div class="header-nav-content">
-            <ul class="header-nav-list">
-                <li><router-link class="active" to="/">首页</router-link></li>
+            <ul class="header-nav-list" :class="'ul-active' + indexNav">
+                <li><router-link to="/">首页</router-link></li>
                 <li><router-link to="/blog">博客</router-link></li>
-                <li><router-link to="#">友链</router-link></li>
                 <li><router-link to="/about">关于</router-link></li>
             </ul>
             <div class="nav-content-right">
@@ -28,7 +27,8 @@
             return {
                 activeIndex: '1',
                 loginFormVisible: false,
-                registerFormVisible: false
+                registerFormVisible: false,
+                routerList: ['/', '/blog', '/about'],
             };
         },
         methods: {
@@ -46,7 +46,12 @@
             }
         },
         computed: {
-
+            indexNav() {
+                console.log(this.$route.path)
+                let index = this.routerList.indexOf(this.$route.path);
+                console.log(index+1)
+                return index+1;
+            }
         },
         components: {
             LoginFrom,
@@ -60,9 +65,13 @@
 
     #header {
         display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
         min-width: 650px;
         width: 90%;
-        margin: 0 auto;
         background: @bg-color;
 
         .header-logo {
@@ -108,24 +117,24 @@
                             width: 100%;
                         }
                     }
-                    /*点击*/
-                    .active {
-                         color: @main-color;
-                         &:after {
-                             position: absolute;
-                             bottom: 0;
-                             left: 0;
-                             right: 0;
-                             margin: 0 auto;
-                             content: "";
-                             width: 100%;
-                             height: 2px;
-                             background: @main-color;
-                         }
-                     }
                 }
             }
 
+            /*点击*/
+            .ul-active1 li:nth-child(1), .ul-active2 li:nth-child(2), .ul-active3 li:nth-child(3) {
+                color: @main-color;
+                &:after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    background: @main-color;
+                }
+            }
 
             .nav-content-list {
                 display: inline-block;

@@ -1,12 +1,16 @@
 <template>
     <div class="about">
-        <h1>this is about about</h1>
+        <Header></Header>
     </div>
 </template>
 
 <script>
+    import Header from "../../components/Header";
     export default {
-        name: "index.vue"
+        name: "index.vue",
+        components: {
+            Header
+        }
     }
 </script>
 
