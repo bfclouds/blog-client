@@ -17,4 +17,7 @@
         height: 800px;
         background: url("./assets/img/bg.jpg") no-repeat center center/cover fixed;
     }
+    body {
+        min-width: 1150px;
+    }
 </style>
