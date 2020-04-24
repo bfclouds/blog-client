@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-dialog title="登录" :visible="registerFormVisible" :width=layoutWidth :showClose=showClose>
+        <el-dialog title="注册" :visible="registerFormVisible" :width=layoutWidth :showClose=showClose :modal-append-to-body=false>
             <el-form :model="form">
                 <el-form-item label="邮箱" :label-width="formLabelWidth">
                     <el-input

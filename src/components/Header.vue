@@ -12,6 +12,7 @@
                 <el-button plain @click="openLoginForm">登录</el-button>
             </div>
         </div>
+
         <login-from :loginFormVisible = loginFormVisible @closeLoginForm = "closeLoginForm"></login-from>
         <register-from :registerFormVisible = registerFormVisible @closeRegisterForm = "closeRegisterForm"></register-from>
     </div>
