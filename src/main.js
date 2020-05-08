@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from "./routers/router";
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import "assets/css/iconfont.css"
 
 import { Menu, Submenu, MenuItem, Button, MessageBox, Message, Dialog, Form,
   FormItem, Input, Option, Select} from 'element-ui';

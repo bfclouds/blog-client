@@ -37,7 +37,7 @@
 
     .search-card {
         position: relative;
-        width: 250px;
+        width: @side-width;
         margin: 0 auto;
         background: @bg-color;
         .search-card-ul {

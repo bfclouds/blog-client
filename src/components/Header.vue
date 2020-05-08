@@ -48,9 +48,7 @@
         },
         computed: {
             indexNav() {
-                console.log(this.$route.path)
                 let index = this.routerList.indexOf(this.$route.path);
-                console.log(index+1)
                 return index+1;
             }
         },
@@ -74,7 +72,7 @@
         min-width: 650px;
         width: 90%;
         background: @bg-color;
-
+        z-index: 99;
         .header-logo {
             width: @header-height;
             height: @header-height;

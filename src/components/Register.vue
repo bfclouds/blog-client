@@ -76,14 +76,12 @@
             async login() {
                 this.registerState = true;
                 await setTimeout(() => {
-                    console.log(this.form.name, this.form.password, this.form.code);
                     this.registerState = false;
                 }, 1000);
             },
             async sendCode() {
                 this.code.sendState = true;
                 await setTimeout(() => {
-                    console.log('发送验证码成功');
                     this.code.sendState = false;
                     this.code.disableCode = true;
                 }, 1000);
@@ -91,7 +89,6 @@
                 let timer = setInterval(() => {
                     if (this.code.time > 0) {
                         this.code.time -= 1;
-                        console.log(this.code.disableCode, this.code.time)
                     } else {
                         clearInterval(timer);
                         this.code.disableCode = false;

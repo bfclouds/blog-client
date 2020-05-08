@@ -3,3 +3,17 @@
 @main-color: #42b983;
 @card-bg-color: #72cc81;
 @font-color: #ccc;
+
+@content-font-size: 16px;
+@content-color: #575767;
+
+@side-width: 250px;
+
+.clear-float {
+  &::after {
+    display: block;
+    content: "";
+    font-size: 0;
+    clear: both;
+  }
+}
