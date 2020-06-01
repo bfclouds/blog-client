@@ -19,7 +19,7 @@
 </template>
 
 <script>
-    import BlogHeader from "../../components/Header";
+    import BlogHeader from "components/common/Header";
     import SideCard from "./SideCard";
     import SideOther from "./SideOther";
     import Article from "./Article";

@@ -17,8 +17,6 @@
 </script>
 
 <style scoped lang="less">
-    @import "~assets/css/common.less";
-
     .side-other {
         width: @side-width;
         background: @bg-color;

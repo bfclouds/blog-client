@@ -19,8 +19,8 @@
 </template>
 
 <script>
-    import LoginFrom from 'components/Login';
-    import RegisterFrom from 'components/Register';
+    import LoginFrom from 'components/common/Login';
+    import RegisterFrom from 'components/common/Register';
 
     export default {
         name: "Header",
@@ -60,8 +60,6 @@
 </script>
 
 <style lang="less" scoped>
-    @import "~assets/css/common.less";
-
     #header {
         display: flex;
         position: fixed;

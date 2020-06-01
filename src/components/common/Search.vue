@@ -12,7 +12,6 @@
 </script>
 
 <style scoped lang="less">
-    @import "~assets/css/common.less";
     @search-input-height: 40px;
 
     .search {

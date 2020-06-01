@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import Search from "../../components/Search";
+    import Search from "components/common/Search";
     export default {
         name: "SideCard",
         data() {
@@ -33,8 +33,6 @@
 </script>
 
 <style scoped lang="less">
-    @import "~assets/css/common.less";
-
     .search-card {
         position: relative;
         width: @side-width;

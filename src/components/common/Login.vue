@@ -103,7 +103,7 @@
 <style scoped>
     .login-code {
         display: inline-block;
-        width: 180px;
+        width: 170px;
     }
 
     .login-code-button {

@@ -1,12 +1,12 @@
 <template>
     <div class="home">
         <blog-header></blog-header>
-        home
+        <div>home</div>
     </div>
 </template>
 
 <script>
-    import BlogHeader from "../../components/Header";
+    import BlogHeader from "../../components/common/Header";
     export default {
         name: "home",
         components: {
