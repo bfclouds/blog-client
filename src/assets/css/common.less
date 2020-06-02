@@ -23,5 +23,18 @@
 }
 
 .flex-1 {
-  flex: 1;
+  flex: 1 1 auto; // IE11 flex: 1; 默认为 1 1 0px; 火狐 默认为 1 1 0%
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.cf:before, .cf:after {
+  content: "";
+  display: table; // 可以触发格式化上下文
+}
+
+.cf:after {
+  clear: both;
 }

@@ -4,9 +4,10 @@ import router from "./routers/router";
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import "assets/css/iconfont.css"
+import 'element-ui/lib/theme-chalk/display.css'
 
 import { Menu, Submenu, MenuItem, Button, MessageBox, Message, Dialog, Form,
-  FormItem, Input, Option, Select} from 'element-ui';
+  FormItem, Input, Option, Select, Row, Col} from 'element-ui';
 
 Vue.use(VueAxios, axios)
 
@@ -20,6 +21,9 @@ Vue.use(FormItem);
 Vue.use(Input);
 Vue.use(Option);
 Vue.use(Select);
+Vue.use(Row);
+Vue.use(Col);
+
 
 
 Vue.prototype.$prompt = MessageBox.prompt;
