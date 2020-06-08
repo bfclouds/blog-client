@@ -39,7 +39,7 @@
         position: relative;
         width: @side-width;
         margin: 0 auto;
-        background: @bg-color;
+        background-color: @bg-color;
         .search-card-ul {
             color: @font-color;
             li {

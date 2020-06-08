@@ -18,7 +18,7 @@
     .search {
         position: relative;
         text-align: center;
-        background: @main-color;
+        background-color: rgba(0,0,0,.1);
         overflow: hidden;
         .blog-search-input {
             display: inline-block;

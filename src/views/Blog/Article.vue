@@ -37,11 +37,11 @@
           <i v-else class="iconfont icon-dianzan"
              @click="clickGoodBtn"
           ></i>
-          <span>{{newArticle.goodCount}}</span>
+          <span class="article-icon-text">{{newArticle.goodCount}}</span>
         </div>
         <div class="article-eye">
           <i class="iconfont icon-yanjing"></i>
-          <span>{{newArticle.eyeCount}}</span>
+          <span class="article-icon-text">{{newArticle.eyeCount}}</span>
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@
         methods: {
             clickGoodBtn() {
                 let newTimer = Date.now()
-                if (newTimer - this.timer > 1000) {
+                if (newTimer - this.timer > 400) {
                     //发起请求改变是否点赞状态，cookie获取当前登录用户信息，文章信息artcile.id
                     // todo
                     // 修改
@@ -246,6 +246,10 @@
         .article-good {
           display: inline-block;
           float: right;
+        }
+
+        .article-icon-text {
+          user-select: none;
         }
 
         i {
