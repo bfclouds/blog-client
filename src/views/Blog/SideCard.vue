@@ -2,7 +2,7 @@
     <div class="search-card">
         <Search></Search>
         <ul class="search-card-ul" @mouseleave="handleMouseLeave">
-            <li @mouseenter="handleMouseEnter" v-for="item in articleTag" :key="item.id"><a href="#">{{item.name}}</a></li>
+            <li @mouseenter="handleMouseEnter" v-for="item in articleTagList" :key="item.id"><a href="#">{{item.name}}</a></li>
         </ul>
         <div class="card-cover" :style="{top: coverTop + 'px'}"></div>
     </div>
@@ -10,13 +10,17 @@
 
 <script>
     import Search from "components/common/Search";
+    import request from "@/api/article.api.js"
     export default {
         name: "SideCard",
         data() {
           return {
-              articleTag: [{name: '全部文章', id: 1}, {name: '个人日记', id: 2}, {name: 'HTML5&CSS3', id: 3}, {name: 'JavaScript', id: 4}, {name: 'ASP.NET MVC', id: 5}, {name: '其他', id: 6}],
+              articleTagList: [{name: '全部文章', id: 1}, {name: '个人日记', id: 2}, {name: 'HTML5&CSS3', id: 3}, {name: 'JavaScript', id: 4}, {name: 'ASP.NET MVC', id: 5}, {name: '其他', id: 6}],
               coverTop: 56
           }
+        },
+        mouted() {
+            // this.getArticleType()
         },
         methods: {
             handleMouseEnter(e) {
@@ -25,6 +29,13 @@
             handleMouseLeave() {
                 this.coverTop = 56;
             },
+            getArticleType () {
+                request.getArticleType({}).then(res => {
+                    console.log(res)
+                }).catch(err => {
+                    console.log(err)
+                })
+            }
         },
         components: {
             Search

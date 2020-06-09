@@ -77,14 +77,14 @@ export default {
     }
   },
     mounted() {
-      this.getListArticle()
+      this.getArticleList()
     },
     methods: {
     changeGoodState(newArticle) {
       this.$set(this.article, newArticle.id - 1, newArticle);
     },
-    getListArticle () {
-        request.getListArticle().then(res => {
+    getArticleList () {
+        request.getArticleList({}).then(res => {
             console.log(res)
         })
     }
@@ -98,20 +98,20 @@ export default {
 </script>
 
 <style scoped lang="less">
-    #blog {
-        display: flex;
+  #blog {
+    display: flex;
+    width: 100%;
+    padding-top: 10px;
+    .blog-content {
+        flex: 1;
         margin: 0 auto;
-        padding-top: 10px;
-        .blog-content {
-            flex: 1;
-            margin: 0 auto;
-        }
-        .blog-side {
-            /*position: fixed;*/
-            /*top: 80px;*/
-            /*right: 5%;*/
-            width: 300px;
-            height: 1000px;
-        }
     }
+    .blog-side {
+      /*position: fixed;*/
+      /*top: 80px;*/
+      /*right: 5%;*/
+      width: 300px;
+      height: 1000px;
+    }
+  }
 </style>

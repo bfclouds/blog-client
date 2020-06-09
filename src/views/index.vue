@@ -15,12 +15,12 @@
 <!--      </div>-->
 <!--    </el-col>-->
 <!--  </el-row>-->
-  <div class="main-wrapper">
+  <div class="main-wrapper hearder-side-cloumn">
     <div class="header-side">
       <header-side></header-side>
     </div>
     <div class="content_right">
-      <div class="flex flex-column" style="width: 100%;">
+      <div class="flex">
         <div class="flex-1">
           <header-top></header-top>
         </div>
@@ -46,19 +46,15 @@
 
 <style scoped lang="less">
   .main-wrapper {
+    display: flex;
     margin: 0 auto;
     width: 100%;
     height: 100%;
     .header-side {
-      float: left;
       height: 100%;
     }
     .content_right {
-      float: left;
-      width: 80%;
       .content-wrapper {
-        width: 100%;
-        height: 100%;
         padding: 5px;
       }
     }

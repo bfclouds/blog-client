@@ -12,6 +12,8 @@
 @header-side-width: 200px;
 @header-side-logo-width: @header-side-width / 4px;
 
+@min-width-ms: 992px;
+
 .clear-float {
   &::after {
     display: block;
@@ -44,4 +46,23 @@
 
 .cf:after {
   clear: both;
+}
+
+// 大屏
+@media screen and (min-width: @min-width-ms) {
+  // .blog-side {
+  //   margin-left: @header-side-width + 10px;
+  // }
+  .header-side {
+    width: @header-side-width;
+  }
+
+  .content_right {
+    flex: 1;
+  }
+}
+
+// 小屏
+@media screen and (max-width: @min-width-ms) {
+  
 }

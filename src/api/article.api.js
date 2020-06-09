@@ -2,12 +2,19 @@ import request from "./index"
 
 // 文章列表api
 
-const urlApi = {
-    getListArticle: '/article/get_list_article' // 过去文章列表
+const articleUrlApi = {
+    getArticleList: '/article/get_article_list' // 获取文章列表
+}
+
+const articleOtherApi = {
+    getArticleType: '/article/get_article_type' // 文章类型列表
 }
 
 export default  {
-    getListArticle () {
-        return request.get(urlApi.getListArticle)
+    getArticleList (params) {
+        return request.get(articleUrlApi.getArticleList, params)
+    },
+    getArticleType (params) {
+        return request.get(articleOtherApi.getArticleType, params)
     }
 }

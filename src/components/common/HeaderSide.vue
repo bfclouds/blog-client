@@ -155,10 +155,10 @@
     }
   }
 
-  @media screen and (min-width: 992px) {
-    .header-side-left {
-      margin-left: @header-side-width + 10px;
-    }
-  }
+  // @media screen and (min-width: @min-width-ms) {
+  //   .header-side-left {
+  //     margin-left: @header-side-width + 10px;
+  //   }
+  // }
 
 </style>
