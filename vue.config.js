@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require("webpack")
 
 function resolveDir(dir){
     return path.join(__dirname,dir)
@@ -35,5 +36,14 @@ module.exports = {
                 path.resolve(__dirname, './src/assets/css/common.less')
             ]
         }
+    },
+    configureWebpack: {
+        plugins: [
+            new webpack.ProvidePlugin({
+                'window.Quill': 'quill/dist/quill.js',
+                'Quill': 'quill/dist/quill.js'
+            }),
+
+        ]
     }
 };

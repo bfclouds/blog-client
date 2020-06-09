@@ -1,48 +1,22 @@
 <template>
     <div>
-        <el-row>
-            <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="3">
-                <h1>
-                    <a href>管理系统</a>
-                    <i :class="iconview" style="color: #409eff;cursor:pointer;" @click="chanView"></i>
-                </h1>
-            </el-col>
-            <div :class="menuview">
-                <el-col :xs="24" :sm="24" :md="16" :lg="16" :xl="17">
-                    <el-menu
-                        :default-active="activeIndex"
-                        class="el-menu-demo"
-                        mode="horizontal"
-                        @select="handleSelect"
-                    >
-                        <el-menu-item index="1">首页</el-menu-item>
-                        <el-submenu index="2">
-                            <template slot="title">我的工作台</template>
-                            <el-menu-item index="2-1">选项1</el-menu-item>
-                            <el-menu-item index="2-2">选项2</el-menu-item>
-                            <el-menu-item index="2-3">选项3</el-menu-item>
-                            <el-submenu index="2-4">
-                                <template slot="title">选项4</template>
-                                <el-menu-item index="2-4-1">选项1</el-menu-item>
-                                <el-menu-item index="2-4-2">选项2</el-menu-item>
-                                <el-menu-item index="2-4-3">选项3</el-menu-item>
-                            </el-submenu>
-                        </el-submenu>
-                        <el-menu-item index="3" disabled>消息中心</el-menu-item>
-                        <el-menu-item index="4">
-                            <a href="https://www.ele.me" target="_blank">订单管理</a>
-                        </el-menu-item>
-                    </el-menu>
-                </el-col>
-                <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="4">
-                    <el-input placeholder="请输入搜索关键词" suffix-icon="el-icon-search" v-model="keywords"></el-input>
-                </el-col>
-            </div>
-        </el-row>
+        <div class="test_top">
+<!--            <Test1 v-if="ifShow('top', 'test1')"></Test1>-->
+            <component v-bind:is="topTabComponent"></component>
+        </div>
+        <div class="test_bottom">
+            <component v-bind:is="bottomTabComponent"></component>
+        </div>
+      <editer-quill></editer-quill>
     </div>
 </template>
 
 <script>
+    import Test1 from "../../components/common/test1";
+    import Test2 from "../../components/common/test2";
+    import Test3 from "../../components/common/test3";
+    import EditerQuill from "../../components/common/EditerQuill";
+
     export default {
         data() {
             return {
@@ -50,8 +24,29 @@
                 iconview: ["el-icon-s-unfold", "hidden-md-and-up"],
                 activeIndex: "1",
                 activeIndex2: "1",
-                keywords:''
+                keywords:'',
+                positionInfo: [
+                    {
+                        position: 'top',
+                        compute: 'Test3'
+                    },
+                    {
+                        position: 'bottom',
+                        compute: 'Test1'
+                    }
+
+                ],
+                showConputed: {
+                    top: '',
+                    middle: '',
+                    bottom: ''
+                }
+                // 在mouted时候获取该路由下的配置信息
+                // router: '/about',
             };
+        },
+        mounted() {
+            this.handleConputed()
         },
         methods: {
             chanView() {
@@ -65,7 +60,33 @@
             },
             handleSelect(key, keyPath) {
                 console.log(key, keyPath);
+            },
+            handleConputed () {
+                this.positionInfo.reduce((arr, item) => {
+                    console.log(arr, item)
+                    if (!arr[item.position]) {
+                        arr[item.position] = item.compute
+                    }
+                    return arr
+                }, this.showConputed)
+            },
+            ifShow (position, compute) {
+                return this.showConputed[position] && this.showConputed[position] === compute
             }
+        },
+        computed: {
+            topTabComponent () {
+                return this.showConputed.top
+            },
+            bottomTabComponent () {
+                return this.showConputed.bottom
+            }
+        },
+        components: {
+            Test1,
+            Test2,
+            Test3,
+            EditerQuill
         }
     };
 </script>
@@ -90,5 +111,16 @@
     }
     .el-input {
         margin: 10px 0;
+    }
+
+    .test_top {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+    .test_bottom {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        background-color: red;
     }
 </style>

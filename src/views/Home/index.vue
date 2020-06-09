@@ -6,7 +6,7 @@
 </template>
 
 <script>
-    import BlogHeader from "../../components/common/Header";
+    import BlogHeader from "../../components/common/HeaderSide";
     export default {
         name: "home",
         components: {

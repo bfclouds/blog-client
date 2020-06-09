@@ -31,7 +31,7 @@
           <span class="other-tag-name">{{newArticle.tag}}</span>
         </div>
         <div class="article-good">
-          <i v-if="this.newArticle.isGood ? true : false" class="iconfont icon-dianzan" style="color: red"
+          <i v-if="this.newArticle.isGood" class="iconfont icon-dianzan" style="color: red"
              @click="clickGoodBtn"
           ></i>
           <i v-else class="iconfont icon-dianzan"
@@ -102,7 +102,7 @@
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
-    width: 700px;
+    min-width: 300px;
     margin: 0 auto 20px;
     padding: 0 30px 10px;
     background: bisque;

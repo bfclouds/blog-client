@@ -4,10 +4,13 @@
 @card-bg-color: #72cc81;
 @font-color: #ccc;
 
+@side-width: 250px;
+
 @content-font-size: 16px;
 @content-color: #575767;
 
-@side-width: 250px;
+@header-side-width: 200px;
+@header-side-logo-width: @header-side-width / 4px;
 
 .clear-float {
   &::after {
@@ -28,6 +31,10 @@
 
 .flex-column {
   flex-direction: column;
+}
+
+.cf {
+  font-size: 0;
 }
 
 .cf:before, .cf:after {

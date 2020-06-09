@@ -1,25 +1,21 @@
 <template>
     <div id="blog">
-        <blog-header></blog-header>
-        <div class="blog-wrapper cf">
-            <div class="blog-content">
-                <Article
-                        v-for="item of article"
-                        :article="item"
-                        :key="item.id"
-                        @clickGood="changeGoodState"
-                ></Article>
-            </div>
-            <div class="blog-side">
-                <side-card></side-card>
-                <side-other></side-other>
-            </div>
+        <div class="blog-content">
+            <Article
+                    v-for="item of article"
+                    :article="item"
+                    :key="item.id"
+                    @clickGood="changeGoodState"
+            ></Article>
+        </div>
+        <div class="blog-side">
+            <side-card></side-card>
+            <side-other></side-other>
         </div>
     </div>
 </template>
 
 <script>
-import BlogHeader from "components/common/Header";
 import SideCard from "./SideCard";
 import SideOther from "./SideOther";
 import Article from "./Article";
@@ -94,7 +90,6 @@ export default {
     }
   },
   components: {
-    BlogHeader,
     SideCard,
     SideOther,
     Article
@@ -104,26 +99,19 @@ export default {
 
 <style scoped lang="less">
     #blog {
-        min-width: 800px;
-
-        .blog-wrapper {
-            display: flex;
-            width: 90%;
+        display: flex;
+        margin: 0 auto;
+        padding-top: 10px;
+        .blog-content {
+            flex: 1;
             margin: 0 auto;
-            padding-top: 80px;
-
-            .blog-content {
-                flex: 1;
-                margin: 0 auto;
-            }
-
-            .blog-side {
-                /*position: fixed;*/
-                /*top: 80px;*/
-                /*right: 5%;*/
-                width: 300px;
-                height: 1000px;
-            }
+        }
+        .blog-side {
+            /*position: fixed;*/
+            /*top: 80px;*/
+            /*right: 5%;*/
+            width: 300px;
+            height: 1000px;
         }
     }
 </style>
