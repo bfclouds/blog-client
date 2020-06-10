@@ -2,7 +2,7 @@
     <div class="search-card">
         <Search></Search>
         <ul class="search-card-ul" @mouseleave="handleMouseLeave">
-            <li @mouseenter="handleMouseEnter" v-for="item in articleTagList" :key="item.id"><a href="#">{{item.name}}</a></li>
+            <li @mouseenter="handleMouseEnter" v-for="(item, index) in articleTagList" :key="index"><a href="#">{{item.tag}}</a></li>
         </ul>
         <div class="card-cover" :style="{top: coverTop + 'px'}"></div>
     </div>
@@ -10,17 +10,19 @@
 
 <script>
     import Search from "components/common/Search";
-    import request from "@/api/article.api.js"
+    import request from "@/api/article.api.js";
+    import Vue from "vue";
+
     export default {
         name: "SideCard",
         data() {
           return {
-              articleTagList: [{name: '全部文章', id: 1}, {name: '个人日记', id: 2}, {name: 'HTML5&CSS3', id: 3}, {name: 'JavaScript', id: 4}, {name: 'ASP.NET MVC', id: 5}, {name: '其他', id: 6}],
+              articleTagList: [],
               coverTop: 56
           }
         },
-        mouted() {
-            // this.getArticleType()
+        mounted() {
+            this.getArticleType()
         },
         methods: {
             handleMouseEnter(e) {
@@ -30,8 +32,9 @@
                 this.coverTop = 56;
             },
             getArticleType () {
-                request.getArticleType({}).then(res => {
-                    console.log(res)
+                request.getArticleType().then(res => {
+                    this.articleTagList = Vue.observable(res.data.data);
+                    console.log(this.articleTagList)
                 }).catch(err => {
                     console.log(err)
                 })

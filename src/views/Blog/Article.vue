@@ -14,8 +14,8 @@
       </div>
     </div>
     <div class="card-article-content">
-      <div class="article-content-img">
-        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=983728995,1218849452&fm=15&gp=0.jpg"
+      <div class="article-content-img hidden-sm-and-down">
+        <img :src="img"
              alt="图片">
       </div>
       <p class="article-content">
@@ -37,11 +37,11 @@
           <i v-else class="iconfont icon-dianzan"
              @click="clickGoodBtn"
           ></i>
-          <span>{{newArticle.goodCount}}</span>
+          <span>{{newArticle.likes}}</span>
         </div>
         <div class="article-eye">
           <i class="iconfont icon-yanjing"></i>
-          <span>{{newArticle.eyeCount}}</span>
+          <span>{{newArticle.views}}</span>
         </div>
       </div>
     </div>
@@ -55,11 +55,12 @@
             return {
                 tagList: ['原创', '转载'],
                 date: {
-                    date: Number,
-                    month: Number,
-                    year: Number,
+                    date: null,
+                    month: null,
+                    year: null,
                 },
                 newArticle: this.article,
+                img: this.article.surface,
                 timer: 0
             }
         },
@@ -84,13 +85,13 @@
                 return this.article.id === 1;
             },
             getDate(index) {
-                return this.article.data.split('-')[index];
+                return this.article.date.split('-')[index];
             }
         },
         mounted() {
-            this.date.date = this.article.data.split('-')[2];
-            this.date.month = this.article.data.split('-')[1];
-            this.date.year = this.article.data.split('-')[0];
+            this.date.date = this.article.date.split('-')[2];
+            this.date.month = this.article.date.split('-')[1];
+            this.date.year = this.article.date.split('-')[0];
         }
     }
 </script>
@@ -102,7 +103,6 @@
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
-    min-width: 300px;
     margin: 0 auto 20px;
     padding: 0 30px 10px;
     background: bisque;
@@ -177,7 +177,6 @@
         width: 300px;
         height: 200px;
         margin-right: 15px;
-        overflow: hidden;
 
         img {
           width: 100%;

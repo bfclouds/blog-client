@@ -1,11 +1,11 @@
 <template>
     <div class="side-other">
         <ul class="other-other-list">
-            <li>罗志祥多人运动</li>
-            <li>罗志祥管理时间</li>
-            <li>罗志祥多人运动</li>
-            <li>罗志祥多人运动</li>
-            <li>罗志祥多人运动</li>
+            <li>减肥很难吗</li>
+            <li>我们健身吧</li>
+            <li>我们健身吧</li>
+            <li>我们健身吧</li>
+            <li>我们健身吧</li>
         </ul>
     </div>
 </template>

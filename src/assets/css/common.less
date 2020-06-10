@@ -13,6 +13,7 @@
 @header-side-logo-width: @header-side-width / 4px;
 
 @min-width-ms: 992px;
+@supper-min-width-sm: 768px - 1px;
 
 .clear-float {
   &::after {
@@ -64,5 +65,27 @@
 
 // 小屏
 @media screen and (max-width: @min-width-ms) {
-  
+  .content_right {
+    margin-top: @header-height;
+  }
+}
+
+@media screen and (max-width: @supper-min-width-sm) {
+  .article-header-date .article-date-data {
+    margin: 11px 0!important;
+    font-size: 12px!important;
+  }
+  .article-content {
+    flex: none;
+  }
+  .header-logo,
+  .header-nav-content .header-nav-list {
+    margin-left: 0!important;
+  }
+  /deep/ .nav-content-right .el-button {
+    padding: 5px 11px;
+  }
+  #header-top .header-top-wrapper .header-nav-content {
+    justify-content: start!important;
+  }
 }

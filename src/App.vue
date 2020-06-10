@@ -17,7 +17,7 @@
         height: 100%;
         /*background: url("./assets/img/bg.jpg") no-repeat center center/cover fixed;*/
     }
-    body {
+    /* body {
         min-width: 1150px;
-    }
+    } */
 </style>

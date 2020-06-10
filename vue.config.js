@@ -12,6 +12,7 @@ module.exports = {
             .set('components', resolveDir('./src/components'))
             .set('views',resolveDir('./src/views'))
             .set('routers',resolveDir('./src/routers'))
+            .set('img',resolveDir('./src/img'))
     },
     devServer: {
         open: false,
