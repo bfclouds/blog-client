@@ -1,6 +1,7 @@
 <template>
     <div>
         <div class="test_top">
+            google
 <!--            <Test1 v-if="ifShow('top', 'test1')"></Test1>-->
             <component v-bind:is="topTabComponent"></component>
         </div>
