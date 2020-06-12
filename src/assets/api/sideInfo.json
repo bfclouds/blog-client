@@ -1,54 +1,92 @@
 {
-  "articleTag": [
-    {
-      "name": "全部文章",
-      "id": 1
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "number"
     },
-    {
-      "name": "个人日记",
-      "id": 2
+    "message": {
+      "type": "string"
     },
-    {
-      "name": "HTML5&CSS3",
-      "id": 3
+    "data": {
+      "type": "object",
+      "properties": {
+        "class_number": {
+          "type": "string",
+          "description": "班号"
+        },
+        "birthday": {
+          "type": "string",
+          "description": "生日"
+        },
+        "education": {
+          "type": "string",
+          "description": "学历"
+        },
+        "user_name": {
+          "type": "boolean",
+          "description": "学号"
+        },
+        "origin_address": {
+          "type": "boolean",
+          "description": "生源所在地"
+        },
+        "real_name": {
+          "type": "boolean",
+          "description": "真实姓名"
+        },
+        "professional": {
+          "type": "boolean",
+          "description": "专业"
+        },
+        "home_address": {
+          "type": "string",
+          "description": "家庭地址"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "qq": {
+          "type": "string",
+          "description": "qq"
+        },
+        "id_number": {
+          "type": "string",
+          "description": "身份证号"
+        },
+        "sex": {
+          "type": "boolean",
+          "description": "性别"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机"
+        },
+        "graduation_time": {
+          "type": "string",
+          "description": "毕业时间"
+        },
+        "institute": {
+          "type": "string",
+          "description": "学院"
+        },
+        "companyName": {
+          "type": "string",
+          "description": "单位名称"
+        },
+        "code": {
+          "type": "string",
+          "description": "协议编号"
+        },
+        "companyCreditcode": {
+          "type": "string",
+          "description": "组织机构代码"
+        }
+      }
     },
-    {
-      "name": "JavaScript",
-      "id": 4
-    },
-    {
-      "name": "ASP.NET MVC",
-      "id": 5
-    },
-    {
-      "name": "其他",
-      "id": 6
+    "ok": {
+      "type": "boolean"
     }
-  ],
-  "otherSide": [
-    {
-      "name": "减肥很难吗",
-      "id": 1
-    },
-    {
-      "name": "你要减肥吗",
-      "id": 2
-    },
-    {
-      "name": "我们健身吧",
-      "id": 3
-    },
-    {
-      "name": "我们健身吧",
-      "id": 4
-    },
-    {
-      "name": "我们健身吧",
-      "id": 5
-    },
-    {
-      "name": "我们健身吧",
-      "id": 6
-    }
-  ]
+  }
 }

@@ -11,8 +11,8 @@ const articleOtherApi = {
 }
 
 export default  {
-    getArticleList () {
-        return request.get(articleUrlApi.getArticleList)
+    getArticleList (params) {
+        return request.get(articleUrlApi.getArticleList, params)
     },
     getArticleType () {
         return request.get(articleOtherApi.getArticleType)

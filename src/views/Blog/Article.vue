@@ -15,7 +15,7 @@
     </div>
     <div class="card-article-content">
       <div class="article-content-img hidden-sm-and-down">
-        <img :src="img"
+        <img :src="serverUrl + '?name=' + img"
              alt="图片">
       </div>
       <p class="article-content">
@@ -61,7 +61,8 @@
                 },
                 newArticle: this.article,
                 img: this.article.surface,
-                timer: 0
+                timer: 0,
+                serverUrl: 'http://localhost:3000/resource/img'
             }
         },
         props: {

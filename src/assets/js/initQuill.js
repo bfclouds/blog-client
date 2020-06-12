@@ -1,11 +1,4 @@
 var toolbarOptions = [
-    // [{ size: [ 'small', false, 'large', 'huge' ]}],
-    // ['link', 'font'],
-    // [{'align': []}],
-    // [{ 'indent': '-1'}, { 'indent': '+1' }],
-    // [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-    // [{'header': 1}, {'header': 2}, {'header': 3}],
-    // ['clean']
     ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
     ['blockquote', 'code-block'],
 
